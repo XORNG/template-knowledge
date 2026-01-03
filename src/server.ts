@@ -28,9 +28,6 @@ export function createKnowledgeServer(options: KnowledgeServerOptions): {
   const server = new McpServer({
     name: metadata.name,
     version: metadata.version,
-    capabilities: {
-      tools: {},
-    },
   });
 
   const transport = new StdioServerTransport();

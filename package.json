@@ -12,7 +12,7 @@
     }
   },
   "scripts": {
-    "build": "npx tsc",
+    "build": "tsc",
     "dev": "npx tsc --watch",
     "clean": "rm -rf dist",
     "lint": "eslint src --ext .ts",
@@ -31,7 +31,7 @@
   "author": "XORNG Team",
   "license": "MIT",
   "dependencies": {
-    "@xorng/template-base": "^0.1.0",
+    "@xorng/template-base": "file:../template-base",
     "@modelcontextprotocol/sdk": "^1.0.0",
     "pino": "^9.0.0",
     "zod": "^3.23.0"

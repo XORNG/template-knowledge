@@ -3,9 +3,9 @@ import { z } from 'zod';
 /**
  * Document types
  */
-export type DocumentType = 'text' | 'markdown' | 'code' | 'json' | 'html';
+export type DocumentType = 'text' | 'markdown' | 'code' | 'json' | 'html' | 'practice' | 'style-guide';
 
-export const DocumentTypeSchema = z.enum(['text', 'markdown', 'code', 'json', 'html']);
+export const DocumentTypeSchema = z.enum(['text', 'markdown', 'code', 'json', 'html', 'practice', 'style-guide']);
 
 /**
  * Document metadata
@@ -57,6 +57,7 @@ export interface DocumentChunk {
   id: string;
   documentId: string;
   content: string;
+  title?: string;
   startOffset: number;
   endOffset: number;
   metadata: DocumentMetadata;
@@ -66,6 +67,7 @@ export const DocumentChunkSchema = z.object({
   id: z.string(),
   documentId: z.string(),
   content: z.string(),
+  title: z.string().optional(),
   startOffset: z.number(),
   endOffset: z.number(),
   metadata: DocumentMetadataSchema,
