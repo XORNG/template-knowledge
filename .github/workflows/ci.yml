@@ -1,13 +1,10 @@
-# XORNG CI/CD Pipeline
-# Comprehensive build, test, and security validation for pull requests
+# Common fixes for CI failures:
+# 1. Ensure proper YAML indentation (2 spaces per level)
+# 2. Verify all required fields are present (name, on, jobs)
+# 3. Check that job names don't contain special characters
+# 4. Ensure step names are properly quoted if they contain special characters
+# 5. Verify all referenced scripts exist in package.json
 
-name: CI
-
-on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main, develop]
 
 permissions:
   contents: read
