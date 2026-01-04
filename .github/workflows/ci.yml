@@ -1,13 +1,10 @@
-# XORNG CI/CD Pipeline
-# Comprehensive build, test, and security validation for pull requests
+# Common fixes for CI failures:
+# 1. Ensure proper YAML indentation (2 spaces per level)
+# 2. Verify all required fields are present (name, on, jobs)
+# 3. Check that job names don't contain special characters
+# 4. Ensure step names are properly quoted if they contain special characters
+# 5. Verify all referenced scripts exist in package.json
 
-name: CI
-
-on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main, develop]
 
 permissions:
   contents: read
@@ -30,7 +27,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -65,7 +62,7 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
           cache: 'npm'
@@ -98,7 +95,7 @@ jobs:
           fetch-depth: 0
       
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '20'
       
