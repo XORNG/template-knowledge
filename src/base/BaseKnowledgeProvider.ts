@@ -1,4 +1,4 @@
-import {
+import { Logger } from '@xorng/template-base';
   BaseSubAgent,
   type SubAgentMetadata,
   type SubAgentConfig,
